@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const searchBtn = document.getElementById("searchBtn");
   const locationInput = document.getElementById("location");
+  const limitInput = document.getElementById("limit");
   const languageInput = document.getElementById("language");
   const regionInput = document.getElementById("region");
   const resultsDiv = document.getElementById("results");
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const language = languageInput.value.trim() || "en";
     const region = regionInput.value.trim() || "us";
 
-    const url = `https://local-business-data.p.rapidapi.com/search?query=${formattedLocation}&limit=15&lat=37.359428&lng=-121.925337&zoom=13&language=${language}&region=${region}`;
+    const url = `https://local-business-data.p.rapidapi.com/search?query=${formattedLocation}&limit=${limit}&lat=37.359428&lng=-121.925337&zoom=13&language=${language}&region=${region}`;
 
     const options = {
       method: "GET",
